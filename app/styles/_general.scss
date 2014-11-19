@@ -154,6 +154,15 @@ a:focus {
     padding: 0.2em 0;
 }
 
+.text-muted {
+  a {
+    color: #333;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 // /* Space out content a bit */
 // body {
 //     padding-top: 1em;
