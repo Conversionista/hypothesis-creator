@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Hypothesis Creator by Conversionista!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <div class="container">
+      <div class="page-header">
+        <div class="top-c center-block">
+          <img src="images/logo-c_red.svg" alt="C!">
+        </div>
+        <h1>Create your test hypothesis</h1>
+      </div>
+      <p class="lead">Hypotheses give good test results, simple as that.<br /> Use our tool to get structure in how to formulate your hypotheses.</p>
+      <p>You could use it as a kind of "bullshit detector" - if your hypothesis doesn’t fit into the template it's probably not a good test hypothesis.</p>
+      <p>A good hypothesis is a multi-stage rocket - IAR</p>
+      <ol>
+        <li><i>Insights</i> - What have you noticed that makes you think that you have to make a change?</li>
+        <li><i>Action</i> -  What will you do?</li>
+        <li><i>Results</i> - What do you want to accomplish and how do you measure it?</li>
+      </ol>
+      <hr />
+      <h2>A. Fill out the form</h2>
+      <div class="well well-lg line" id="hypothesis">
+        <form role="form">
+          <div class="row">
+            <div class="col-sm-12">
+              <label>Since we have observed that</label> <input type="text" name="problem_description" placeholder="problem description" required> <br />
+              <label>by</label> <input type="text" name="observation_method" placeholder="observation method" required>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-sm-12">
+              <label>we want to</label> <input type="text" name="change" placeholder="make this change" required>
+            </div>
+          </div>
+          <div class="row">
+            
+            <div class="col-sm-12">
+              <label>which should lead to</label> <input type="text" name="behaviuor" placeholder="desired change in behaviuor" required> <br />
+              <label>and the effect will be measured by</label> <input type="text" name="kpi" placeholder="KPI(s) or metrics that will change" required>
+            </div>
+          </div>
+        </form>
+        
+      </div>
+      <p class="ctap"><button class="btn btn-lg btn-success" id="generate" data-toggle="modal" data-target="#h">Create my test hypothesis</button>
+      <button class="btn btn-lg btn-link" id="hExample">or see an example</button></p>
+      <!-- Modal -->
+      <div class="modal fade" id="h" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h3 class="modal-title" id="myModalLabel">B. Grab your bullshit free test hypothesis</h3>
+              <p>Use the formula below when working on your AB or Split tests.</p>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="copy_button" class="btn btn-warning center-block">Copy to clipboard</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+      
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <p class="text-muted"><span class="glyphicon glyphicon-heart"></span> from the Conversionista! team</p>
+    </div>
+  </footer>
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+  <script src="bower_components/zeroclipboard/dist/ZeroClipboard.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+</html>
