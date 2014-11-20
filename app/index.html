@@ -9,6 +9,8 @@
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 		<!-- build:css(.) styles/vendor.css -->
 		<!-- bower:css -->
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="bower_components/bootstrapvalidator/dist/css/bootstrapValidator.css" />
 		<!-- endbower -->
 		<!-- endbuild -->
 		<!-- build:css(.tmp) styles/main.css -->
@@ -36,50 +38,50 @@
 				<li><i>Results</i> - What do you want to accomplish and how do you measure it?</li>
 			</ol>
 			<hr />
-			<h2>A. Fill out the form</h2>
-			<div class="well well-lg line" id="hypothesis">
-				<form role="form">
-					<div class="row">
-						<div class="col-sm-12">
-							<label>Since we have observed that</label> <input type="text" name="problem_description" placeholder="problem description" required> <br />
-							<label>by</label> <input type="text" name="observation_method" placeholder="observation method" required>
-						</div>
-					</div>
-					<div class="row">
-						
-						<div class="col-sm-12">
-							<label>we want to</label> <input type="text" name="change" placeholder="make this change" required>
-						</div>
-					</div>
-					<div class="row">
-						
-						<div class="col-sm-12">
-							<label>which should lead to</label> <input type="text" name="behaviuor" placeholder="desired change in behaviuor" required> <br />
-							<label>and the effect will be measured by</label> <input type="text" name="kpi" placeholder="KPI(s) or metrics that will change" required>
-						</div>
-					</div>
-				</form>
+			
+				<h2>A. Fill out the form</h2>
 				
+				<div class="well well-lg line" id="hypothesis">
+					<form role="form" id="hypothesisForm">		
+						<div class="row">
+							<div class="col-sm-12">
+							    <div class="form-group">
+									<label>Since we have observed that</label> <input type="text" name="problemDescription" placeholder="problem description" required> <br />
+								</div>
+								<div class="form-group">
+									<label>by</label> <input type="text" name="observationMethod" placeholder="observation method" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								    <div class="form-group">
+										<label>we want to</label> <input type="text" name="makeThisChange" placeholder="make this change" required><br />
+									</div>
+									<div class="form-group">
+										<label>for</label> <input type="text" name="forThisSegment" placeholder="this segment/user profile" required>
+									</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<label>which should lead to</label> <input type="text" name="behaviuor" placeholder="desired change in behaviuor" required><br />
+								</div>
+								<div class="form-group">
+									<label>and the effect will be measured by</label> <input type="text" name="kpi" placeholder="KPI(s) or metrics that will change" required>
+								</div>
+							</div>
+						</div>
+					
+					</form>
+				
+				<p class="ctap">
+					<button class="btn btn-lg btn-success" id="generate"  data-toggle="modal" data-target="#h">Create my test hypothesis</button>
+					<button class="btn btn-lg btn-link" id="hExample">or see an example</button>
+				</p>
 			</div>
-			<p class="ctap"><button class="btn btn-lg btn-success" id="generate" data-toggle="modal" data-target="#h">Create my test hypothesis</button>
-			<button class="btn btn-lg btn-link" id="hExample">or see an example</button></p>
-			<!-- Modal -->
-			<div class="modal fade" id="h" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-							<h3 class="modal-title" id="myModalLabel">B. Grab your bullshit free test hypothesis</h3>
-							<p>Use the formula below when working on your AB or Split tests.</p>
-						</div>
-						<div class="modal-body">
-						</div>
-						<div class="modal-footer">
-							<button type="button" id="copy_button" class="btn btn-warning center-block">Copy to clipboard</button>
-						</div>
-					</div>
-				</div>
-			</div>
+		
 			
 			
 		</div>
@@ -89,15 +91,43 @@
 			<p class="text-muted"><span class="glyphicon glyphicon-heart"></span> from the Conversionista! team | <a href="https://github.com/Conversionista/hypothesis-creator/issues" target="_blank">Report a bug or an issue</a></p>
 		</div>
 	</footer>
+	<div class="container">
+		<!-- Modal -->
+		<div class="modal fade" id="h" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h3 class="modal-title" id="myModalLabel">B. Grab your bullshit free test hypothesis</h3>
+						<p>Use the formula below when working on your AB or Split tests.</p>
+					</div>
+					<div class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="copy_button" class="btn btn-warning center-block">Copy to clipboard</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- build:js(.) scripts/vendor.js -->
 	<!-- bower:js -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
-	
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
 	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-	
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
 	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-	
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
 	<script src="bower_components/zeroclipboard/dist/ZeroClipboard.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/bootstrapvalidator/dist/js/bootstrapValidator.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:js({app,.tmp}) scripts/main.js -->
