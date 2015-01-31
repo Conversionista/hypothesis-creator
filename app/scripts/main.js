@@ -112,7 +112,7 @@ $(document).ready(function() {
 	                // }
 	            }
 	        },
-	        behaviuor: {
+	        behaviour: {
 	        	threshold: 0,
         		trigger: 'keyup blur',
 	            validators: {
