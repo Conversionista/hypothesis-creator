@@ -343,6 +343,9 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*'
           ]
         }, {
+          src: 'bower_components/zeroclipboard/dist/ZeroClipboard.swf',
+          dest: '<%= config.dist %>/scripts/ZeroClipboard.swf'
+        },{
           src: 'node_modules/apache-server-configs/dist/.htaccess',
           dest: '<%= config.dist %>/.htaccess'
         }, {
