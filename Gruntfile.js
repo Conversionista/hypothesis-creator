@@ -434,6 +434,21 @@ module.exports = function (grunt) {
     'copy:dist',
     'rev',
     'usemin',
+    'htmlmin'
+  ]);
+  
+  grunt.registerTask('deploy', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'autoprefixer',
+    'concat',
+    'cssmin',
+    'uglify',
+    'copy:dist',
+    'rev',
+    'usemin',
     'htmlmin',
     'buildcontrol'
   ]);
