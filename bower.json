@@ -6,7 +6,8 @@
     "font-awesome": "fontawesome#^4.6.3",
     "webfontloader": "^1.6.24",
     "clipboard": "^1.5.10",
-    "countUp.js": "^1.7.1"
+    "countUp.js": "^1.7.1",
+    "jQuery.equalHeights": "jquery.equalheights#^1.5.2"
   },
   "overrides": {
     "bootstrap-sass": {

@@ -15,13 +15,12 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TLJ4RP');
-    </script>
+    <script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+    analytics.load("x2dvplcx8y");
+    analytics.page()
+    }}();
+    </script> 
 </head>
 
 <body>
@@ -47,19 +46,23 @@
     </nav>
     <div class="container">
         <header class="row">
+        <div class="col-sm-12">
+        <div class="page-header">
             <h1>Create your rock solid experiment hypothesis</h1><h3>&nbsp;</h3>
+            </div>
+            </div>
         </header>
-        <hr />
+        
         <div class="row">
-            <div class="col-sm-6">
-                <h2>A. Fill out the form</h2>
-                <div class="well well-lg line" id="hypothesis">
-                    <form role="form" id="hypothesisForm">
+            <div class="col-sm-5">
+                <h2 class="h2-a">A. Fill out the form <br/>&nbsp;</h2>
+                <div class="well well-lg line sameHeights" id="hypothesis">
+                    <form role="form" id="hypothesisForm" class="sameH">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Since we have observed that</label>
-                                    <input type="text" name="problemDescription" placeholder="problem description" required autocomplete="off" />
+                                    <input type="text" name="problemDescription" placeholder="problem description" required autocomplete="off" autofocus />
                                     <br />
                                 </div>
                                 <div class="form-group">
@@ -95,19 +98,26 @@
                             </div>
                         </div>
                     </form>
-                    <p class="ctap">
-                        <button class="btn btn-lg btn-success" id="generate" disabled="true">Create my test hypothesis</button>
-                        <button class="btn btn-lg btn-link" id="hExample">or see an example</button>
-                    </p>
+                    <div class="ctap">
+                        <button class="btn btn-lg btn-success" id="generate" disabled="true">Create my test hypothesis</button><br />
+                        <button class="btn btn-lg btn-default" id="hExample">or see an example</button>
+                        <button class="btn btn-sm btn-link" id="reset"><i class="fa fa-trash"></i> Reset</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <h2>B. Copy</h2>
-                <p class="output" id="bar"></p>
-                <button class="btn btn-primary copy hide" data-clipboard-target="#bar">Copy formated</button>
-                <hr />
-                <textarea class="form-control output hide" rows="6" id="foo"></textarea>
-                <button class="btn btn-primary copy hide" data-clipboard-target="#foo">Copy plain</button>
+            <div class="col-sm-2 text-center text-muted">
+                <i class="fa fa-2x fa-chevron-right hidden-xs"></i>
+                <i class="fa fa-2x fa-chevron-down visible-xs-block"></i>
+            </div>
+            <div class="col-sm-5">
+                <h2 class="h2-b text-muted">B. Your Hypothesis will appear here</h2><div class="well well-lg sameHeights">
+                <div class="sameH"><p class="output" id="bar"></p></div>
+                <div class="ctap">
+                    <button class="btn btn-default btn-lg copy" data-clipboard-target="#bar" disabled="true">Copy formated</button>
+                    <button class="btn btn-default btn-lg copy" data-clipboard-target="#foo" disabled="true">Copy plain</button></div>
+                <!-- <hr class="hide" /> -->
+                <textarea class="form-control output hidden" rows="6" id="foo"></textarea>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -115,15 +125,19 @@
         </div>
         <div class="row">
         
-          <div class="col-sm-12">
+            <div class="col-sm-6">
+                <h3>Why should you use this method?</h3>
                 <p class="lead">Hypotheses give good test results, simple as that.<br />Use our tool to get structure in how to formulate your hypotheses.</p>
-                <p>You could use it as a kind of "bullshit detector" - if your hypothesis doesn’t fit into the template it's probably not a good testing hypothesis.</p>
+                <p>You could use it as a kind of "bullshit detector" - if your hypothesis <b>doesn’t fit into the template it's probably not a good</b> testing hypothesis.</p>
                 <p>A good hypothesis is a multi-stage rocket - IAR</p>
                 <ol>
-                    <li><i>Insights</i> - What have you noticed that makes you think that you have to make a change?</li>
-                    <li><i>Action</i> - What will you do?</li>
-                    <li><i>Results</i> - What do you want to accomplish and how do you measure it?</li>
+                    <li><b>Insights</b> - What have you noticed that makes you think that you have to make a change?</li>
+                    <li><b>Action</b> - What will you do?</li>
+                    <li><b>Results</b> - What do you want to accomplish and how do you measure it?</li>
                 </ol>
+            </div>
+            <div class="col-sm-6">
+            <h5>Get in touch with us</h5>
             </div>
         </div>
     </div>
@@ -136,6 +150,7 @@
     <script src="/bower_components/webfontloader/webfontloader.js"></script>
     <script src="/bower_components/clipboard/dist/clipboard.js"></script>
     <script src="/bower_components/countUp.js/dist/countUp.min.js"></script>
+    <script src="/bower_components/jQuery.equalHeights/jquery.equalHeights.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/plugins.js -->

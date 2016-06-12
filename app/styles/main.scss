@@ -292,11 +292,11 @@ table caption a {
 
 
 .line input {
-  width: 60%;
+  width: 100%;
   background-color: transparent;
   border: none;
-  border-bottom: 1px dotted #999;
-  text-align: center;
+  border-bottom: 2px dotted #333;
+  // text-align: center;
   min-width: 200px;
   display: inline-block;
   font-size: 14px;
@@ -316,10 +316,16 @@ table caption a {
   border-right: none;
   padding: 1px;
   outline: none;
+  // background-color: rgba(255,255,255,.9);
   
-  &[name="kpi"] {
-      width: 50%;
+  &:focus{
+    color: #158CBA;
+    // color: black;
   }
+
+  // &[name="kpi"] {
+  //     width: 50%;
+  // }
   
 }
 
@@ -370,6 +376,18 @@ table caption a {
 }
 
 header h3 b {
-  color: red;
+  color: #23a127;
   text-decoration: underline;
+}
+
+.fa-chevron-right {
+  margin-top: 10em;
+}
+
+.btn-lg {
+  margin-bottom: 1em;
+}
+
+.form-group label {
+  font-weight: bold;
 }

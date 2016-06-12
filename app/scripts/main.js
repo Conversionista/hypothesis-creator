@@ -1,4 +1,4 @@
-/* global $, WebFont */
+
 
 WebFont.load({
     typekit: { id: 'fvc2tgi' }
@@ -31,6 +31,9 @@ function generateHypothesis(){
 	$('p.output').html(hypoEN);
 	$('textarea.output').text($('p.output').text());
 	$('.hide').removeClass('hide');
+	$('.h2-a').addClass('text-muted');
+	$('.h2-b').text('B. Copy the text below').removeClass('text-muted')
+	$('.copy').attr('disabled', false);
 }
 
 
@@ -49,11 +52,10 @@ $('input').on('blur', function(event) {
 		}
 		
 	});
-	console.log(filledOut);
-	console.log($.inArray(false, filledOut));
+	// console.log(filledOut);
+	// console.log($.inArray(false, filledOut));
 
 	if($.inArray(false, filledOut) === -1){
-		console.log('yay!');
 		$('#generate').attr('disabled', false);
 	} else {
 		$('#generate').attr('disabled', true);
@@ -72,13 +74,14 @@ function getGACount() {
 		type: 'GET'
 	})
 	.done(function(data) {
+		// console.log(data.events);
 		var count = data.events;
 			count = parseInt(count);
 			count = 1752 + count;
-		console.log(count);
+		// console.log(count);
 
 		if(count !== 0){
-			console.log(count)
+			// console.log(count)
 			$('header h3').html('Over <b id="gaCount">' + count + '</b> hypothesis created with this tool so far.');
 			// $('header.row').append('<h3>Over <b id="gaCount">' + count + '</b> hypothesis created with this tool so far.</h3>');
 			var o = {
@@ -92,7 +95,7 @@ function getGACount() {
 			var c = new CountUp('gaCount', 0, count, 0, 1, o);
 			c.start();
 		} else {
-			console.log('no count found...')
+			// console.log('no count found...')
 		}
 
 	});
@@ -100,17 +103,21 @@ function getGACount() {
 
 $('.copy').on('click', function(event) {
 	event.preventDefault();
-	var t = $(this);
+	var t = $(this),
+		oldT = t.text();
 	t.text('Copied!').addClass('animated shake');
 	setTimeout(function(){
-		console.log('copy')
-		t.text('Copy').removeClass('shake');
+		// console.log('copy')
+		t.text(oldT).removeClass('shake');
 	},2500);
 });
 
 
 $(document).ready(function() {
 	'use strict';
+	
+	$('input[name="problemDescription"]').focus();
+	$('input[name="problemDescription"]:text:visible:first').focus();
 	window.dataLayer = window.dataLayer || [];
 	$('#hExample').click(function(event) {
 		event.preventDefault();
@@ -147,5 +154,11 @@ $(document).ready(function() {
 
 });
 
+$('.sameHeights').equalHeights();
+$('.sameH').equalHeights();
 
-
+$('#reset').on('click', function(event) {
+	event.preventDefault();
+	/* Act on the event */
+	$('input').val('');
+});
